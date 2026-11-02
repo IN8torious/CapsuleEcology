@@ -1,0 +1,9 @@
+<Page
+    x:Class="CapsuleEcology.Views.SoonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="30,24" Spacing="10" MaxWidth="760" HorizontalAlignment="Left">
+        <TextBlock x:Name="Title" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+        <TextBlock x:Name="Body" Foreground="#A49A83" FontSize="14" TextWrapping="Wrap"/>
+    </StackPanel>
+</Page>

@@ -1,0 +1,102 @@
+{
+ "schema": "capsule-lineage/1",
+ "id": "phi-3-mini-4k-q4",
+ "name": "Phi-3 Mini Instruct \u00b7 4K",
+ "kind": "model",
+ "kernelType": "Phi-3",
+ "generation": 0,
+ "creator": "Microsoft (Phi-3); ONNX port by Xenova",
+ "owner": null,
+ "constitutionVersion": null,
+ "traits": {
+  "strengths": [
+   "Reasoning",
+   "Compact footprint"
+  ],
+  "weaknesses": [
+   "4K context window",
+   "No vision (text-only build)"
+  ]
+ },
+ "lineage": {
+  "genesis": "adopted",
+  "foundation": "Adopted into N8 Foundation",
+  "parents": [
+   {
+    "id": "microsoft/Phi-3-mini-4k-instruct",
+    "relation": "upstream-original",
+    "chainRef": null
+   }
+  ]
+ },
+ "mutations": [],
+ "forkCount": 0,
+ "source": {
+  "repository": "Xenova/Phi-3-mini-4k-instruct",
+  "revision": "3f18224da40fced477a058a51081e40c28bd0434",
+  "license": "MIT",
+  "dtype": "q4",
+  "weightsBytes": 2723127196,
+  "files": [
+   {
+    "path": "LICENSE",
+    "size": 12500,
+    "sha1": "a0582a5ec2a21658345106454e4fcedb5acf6133"
+   },
+   {
+    "path": "added_tokens.json",
+    "size": 293,
+    "sha1": "4dece7ae8bbeb8f468cb1da428bfb6193ae0751c"
+   },
+   {
+    "path": "config.json",
+    "size": 877,
+    "sha1": "ec9a4fc2c67013707eb4be1d4a8a128d39ab57de"
+   },
+   {
+    "path": "genai_config.json",
+    "size": 1651,
+    "sha1": "cfc6db3475262127616f457906c6016f53370215"
+   },
+   {
+    "path": "generation_config.json",
+    "size": 172,
+    "sha1": "af0a96c81923b115873d3d48e6bf8986bcd6e888"
+   },
+   {
+    "path": "onnx/model_q4.onnx",
+    "size": 1059602332,
+    "sha256": "16b8e5d28a757c37bbfa7d9420fd094c0c20e3615ca3c203b5b9501015045c8f"
+   },
+   {
+    "path": "onnx/model_q4.onnx_data",
+    "size": 1663524864,
+    "sha256": "41d30b87f06b52e6b24c4e2e65a6a14e5c9fb5bc6f495fac17b19c6bc7875ff5"
+   },
+   {
+    "path": "special_tokens_map.json",
+    "size": 568,
+    "sha1": "32b360b36e8255e8346f50942f478e5a2227e2e6"
+   },
+   {
+    "path": "tokenizer.json",
+    "size": 1844409,
+    "sha1": "efc309ef56b8d8fba1b50d1b4a6e5be6cfded459"
+   },
+   {
+    "path": "tokenizer.model",
+    "size": 499723,
+    "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+   },
+   {
+    "path": "tokenizer_config.json",
+    "size": 3169,
+    "sha1": "9d9d37222d0f5ad9b2f02408b13ec21b8023a93f"
+   }
+  ]
+ },
+ "chain": {
+  "head": null,
+  "length": 0
+ }
+}

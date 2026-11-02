@@ -1,0 +1,205 @@
+{
+  "format": "capsule-models/1",
+  "generated": "2026-11-02",
+  "law": "Downloads are user-initiated only, from the pinned upstream revision, disclosed (source, size, license) before the first byte. Verification: LFS files by SHA-256, small files by git-blob SHA-1 (the R4-proven semantics \u2014 a naive file SHA-1 would refuse valid downloads). A model is adoptable only in the verified state; anything less refuses by absence.",
+  "models": [
+    {
+      "id": "phi-3.5-mini-q4f16",
+      "name": "Phi-3.5 Mini Instruct",
+      "repository": "onnx-community/Phi-3.5-mini-instruct-onnx-web",
+      "revision": "1a2c0e4b2eb1a872716fdc50b100617499739a73",
+      "license": "MIT",
+      "dtype": "q4f16",
+      "onnx": "onnx/model_q4f16.onnx",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "size": 1582,
+          "kind": "blob",
+          "blobSha1": "3d92c672e7668ad45e10aca3c5bcd69677fa9813"
+        },
+        {
+          "path": "CODE_OF_CONDUCT.md",
+          "size": 453,
+          "kind": "blob",
+          "blobSha1": "c72a5749c52ac97bca71c672ef5295d303d22b05"
+        },
+        {
+          "path": "LICENSE",
+          "size": 1084,
+          "kind": "blob",
+          "blobSha1": "8ab7b4964d147858b89544e8ca33203237161edc"
+        },
+        {
+          "path": "NOTICE.md",
+          "size": 1809,
+          "kind": "blob",
+          "blobSha1": "56ff7dcadd87eb0bec57dbba00f005b6622c2809"
+        },
+        {
+          "path": "README.md",
+          "size": 35139,
+          "kind": "blob",
+          "blobSha1": "f47f91293f7ec2093274dacbb8c731ec037ff29d"
+        },
+        {
+          "path": "SECURITY.md",
+          "size": 2656,
+          "kind": "blob",
+          "blobSha1": "b3c89efc852e22f71eabf5dfbc6ac62493425eb6"
+        },
+        {
+          "path": "added_tokens.json",
+          "size": 306,
+          "kind": "blob",
+          "blobSha1": "178968dec606c790aa335e9142f6afec37288470"
+        },
+        {
+          "path": "config.json",
+          "size": 3479,
+          "kind": "blob",
+          "blobSha1": "2e91eae74de37774d10bc73b6d54b3af4e92df45"
+        },
+        {
+          "path": "genai_config.json",
+          "size": 1674,
+          "kind": "blob",
+          "blobSha1": "558ddf0fed0d76eece833a3b1c5324a73ef71153"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 195,
+          "kind": "blob",
+          "blobSha1": "93dfd6366eab0bbae1613c5deab3a43bc989e5f8"
+        },
+        {
+          "path": "onnx/model_q4f16.onnx",
+          "size": 220452346,
+          "kind": "lfs",
+          "sha256": "1e1119b8d3fa1adaaad4abaf0c0405dec377054948440e02dd6837d18d2a920d"
+        },
+        {
+          "path": "onnx/model_q4f16.onnx_data",
+          "size": 2097020928,
+          "kind": "lfs",
+          "sha256": "b6dfb3069b717b518266dd58cb8e794bc0712fbc46e1737aef99cd8875302cf0"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 665,
+          "kind": "blob",
+          "blobSha1": "badfd2a349071a6b3ae2681838e51695781f60e1"
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 1844408,
+          "kind": "blob",
+          "blobSha1": "e213d846868b09aefa5225e6026d91b41e19e7ff"
+        },
+        {
+          "path": "tokenizer.model",
+          "size": 499723,
+          "kind": "lfs",
+          "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 3984,
+          "kind": "blob",
+          "blobSha1": "7280c871b0d18a2a03000fb8d638983793aa33e1"
+        }
+      ],
+      "weightsBytes": 2317473274
+    },
+    {
+      "id": "phi-3-mini-4k-q4",
+      "name": "Phi-3 Mini 4K Instruct",
+      "repository": "Xenova/Phi-3-mini-4k-instruct",
+      "revision": "3f18224da40fced477a058a51081e40c28bd0434",
+      "license": "MIT",
+      "dtype": "q4",
+      "onnx": "onnx/model_q4.onnx",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "size": 1639,
+          "kind": "blob",
+          "blobSha1": "30154d868bb026658fce2b456fb9357392d89617"
+        },
+        {
+          "path": "LICENSE",
+          "size": 12500,
+          "kind": "blob",
+          "blobSha1": "a0582a5ec2a21658345106454e4fcedb5acf6133"
+        },
+        {
+          "path": "README.md",
+          "size": 1598,
+          "kind": "blob",
+          "blobSha1": "02e3b293d344a9129426457825351346366cdb82"
+        },
+        {
+          "path": "added_tokens.json",
+          "size": 293,
+          "kind": "blob",
+          "blobSha1": "4dece7ae8bbeb8f468cb1da428bfb6193ae0751c"
+        },
+        {
+          "path": "config.json",
+          "size": 877,
+          "kind": "blob",
+          "blobSha1": "ec9a4fc2c67013707eb4be1d4a8a128d39ab57de"
+        },
+        {
+          "path": "genai_config.json",
+          "size": 1651,
+          "kind": "blob",
+          "blobSha1": "cfc6db3475262127616f457906c6016f53370215"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 172,
+          "kind": "blob",
+          "blobSha1": "af0a96c81923b115873d3d48e6bf8986bcd6e888"
+        },
+        {
+          "path": "onnx/model_q4.onnx",
+          "size": 1059602332,
+          "kind": "lfs",
+          "sha256": "16b8e5d28a757c37bbfa7d9420fd094c0c20e3615ca3c203b5b9501015045c8f"
+        },
+        {
+          "path": "onnx/model_q4.onnx_data",
+          "size": 1663524864,
+          "kind": "lfs",
+          "sha256": "41d30b87f06b52e6b24c4e2e65a6a14e5c9fb5bc6f495fac17b19c6bc7875ff5"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 568,
+          "kind": "blob",
+          "blobSha1": "32b360b36e8255e8346f50942f478e5a2227e2e6"
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 1844409,
+          "kind": "blob",
+          "blobSha1": "efc309ef56b8d8fba1b50d1b4a6e5be6cfded459"
+        },
+        {
+          "path": "tokenizer.model",
+          "size": 499723,
+          "kind": "lfs",
+          "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 3169,
+          "kind": "blob",
+          "blobSha1": "9d9d37222d0f5ad9b2f02408b13ec21b8023a93f"
+        }
+      ],
+      "weightsBytes": 2723127196
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<Window
+    x:Class="CapsuleEcology.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Capsule Ecology">
+    <Grid Background="{StaticResource NebulaBrush}">
+        <NavigationView x:Name="Nav" PaneDisplayMode="Left" IsSettingsVisible="False"
+                        PaneBackground="{StaticResource PaneAcrylic}"
+                        IsBackButtonVisible="Collapsed" SelectionChanged="Nav_SelectionChanged">
+            <NavigationView.PaneHeader>
+                <StackPanel Margin="12,10,0,14">
+                    <TextBlock Text="CAPSULE ECOLOGY" FontFamily="Georgia" FontSize="19" Foreground="#F3EAD8"/>
+                    <TextBlock Text="YOUR DIGITAL CIVILIZATION" FontSize="10" Foreground="#A49A83" CharacterSpacing="160"/>
+                </StackPanel>
+            </NavigationView.PaneHeader>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Your Ecosystem" Tag="home" Icon="Home" IsSelected="True"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="Lineage" Tag="lineage" Icon="AllApps"/>
+                <NavigationViewItem Content="Models" Tag="models" Icon="Library"/>
+                <NavigationViewItem Content="Agents &amp; Crews" Tag="agents" Icon="People"/>
+                <NavigationViewItem Content="Capsules &amp; Worlds" Tag="capsules" Icon="Globe"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="Tweaks" Tag="tweaks" Icon="Repair"/>
+                <NavigationViewItem Content="Apps" Tag="apps" Icon="Shop"/>
+                <NavigationViewItem Content="Utilities" Tag="utilities" Icon="Settings"/>
+                <NavigationViewItem Content="Bible" Tag="bible" Icon="Bookmarks"/>
+                <NavigationViewItem Content="Repair" Tag="repair" Icon="Help"/>
+                <NavigationViewItem Content="Receipts" Tag="receipts" Icon="Document"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="All Pages" Tag="pages" Icon="ViewAll"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Window>

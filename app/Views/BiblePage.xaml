@@ -1,0 +1,37 @@
+<Page
+    x:Class="CapsuleEcology.Views.BiblePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:svc="using:CapsuleEcology.Services">
+    <Grid Margin="30,24,30,20">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <TextBlock Text="The Toolbox Bible" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="#A49A83" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
+        <Grid Grid.Row="2" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="220"/><ColumnDefinition Width="10"/><ColumnDefinition Width="110"/><ColumnDefinition Width="10"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="10"/><ColumnDefinition Width="*"/><ColumnDefinition Width="10"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+            <ComboBox x:Name="BookSel" SelectionChanged="BookSel_SelectionChanged" HorizontalAlignment="Stretch"/>
+            <ComboBox Grid.Column="2" x:Name="ChapterSel" SelectionChanged="ChapterSel_SelectionChanged" HorizontalAlignment="Stretch"/>
+            <StackPanel Grid.Column="4" Orientation="Horizontal" Spacing="6">
+                <Button x:Name="BtnFontM" Content="A−" Click="BtnFontM_Click"/>
+                <Button x:Name="BtnFontP" Content="A+" Click="BtnFontP_Click"/>
+            </StackPanel>
+            <TextBox Grid.Column="6" x:Name="SearchBox" PlaceholderText="Search the whole canon…" KeyDown="SearchBox_KeyDown"/>
+            <Button Grid.Column="8" x:Name="BtnSearch" Content="Search" Click="BtnSearch_Click"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <ScrollViewer x:Name="ReaderScroll">
+                <TextBlock x:Name="VerseText" FontFamily="Georgia" FontSize="15" Foreground="#E8E4DA" TextWrapping="Wrap" MaxWidth="760"/>
+            </ScrollViewer>
+            <ListView x:Name="HitList" Visibility="Collapsed" SelectionChanged="HitList_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="svc:BibleHit">
+                        <StackPanel Padding="2">
+                            <TextBlock Text="{x:Bind Ref}" Foreground="#E9A3AB" FontSize="12.5"/>
+                            <TextBlock Text="{x:Bind Text}" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

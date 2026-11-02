@@ -1,0 +1,38 @@
+<Page
+    x:Class="CapsuleEcology.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer>
+        <StackPanel Margin="30,24,30,40" Spacing="14" MaxWidth="1060" HorizontalAlignment="Left">
+            <TextBlock Text="Your Ecosystem" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+            <TextBlock Text="Welcome to your digital civilization. Everything here is yours — adopted, raised, forked, and receipted. Nothing phones home; every claim on this page can be inspected."
+                       Foreground="#A49A83" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
+            <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="250" ItemHeight="118">
+                <Border Style="{StaticResource BezelCardStyle}" Padding="16" Margin="0,0,12,12">
+                    <StackPanel><TextBlock Text="MODEL LINEAGE" Foreground="#FF8F9D" FontSize="12" CharacterSpacing="120"/>
+                    <TextBlock x:Name="StatModels" Text="—" FontFamily="Georgia" FontSize="26" Foreground="#F3EAD8"/>
+                    <TextBlock Text="Pinned to source, hash-verified, carrying their ancestry." Foreground="#A49A83" FontSize="12" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource BezelCardStyle}" Padding="16" Margin="0,0,12,12">
+                    <StackPanel><TextBlock Text="ACTIVE AGENTS" Foreground="#FF8F9D" FontSize="12" CharacterSpacing="120"/>
+                    <TextBlock Text="8 citizens" FontFamily="Georgia" FontSize="26" Foreground="#F3EAD8"/>
+                    <TextBlock Text="Mira holds the Gate. Nothing executes unapproved." Foreground="#A49A83" FontSize="12" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource BezelCardStyle}" Padding="16" Margin="0,0,12,12">
+                    <StackPanel><TextBlock Text="TWEAK CORE" Foreground="#FF8F9D" FontSize="12" CharacterSpacing="120"/>
+                    <TextBlock x:Name="StatTweaks" Text="—" FontFamily="Georgia" FontSize="26" Foreground="#F3EAD8"/>
+                    <TextBlock Text="Gated, reversible actions. Security untouched — by law." Foreground="#A49A83" FontSize="12" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource BezelCardStyle}" Padding="16" Margin="0,0,12,12">
+                    <StackPanel><TextBlock Text="SCRIPTURE" Foreground="#FF8F9D" FontSize="12" CharacterSpacing="120"/>
+                    <TextBlock Text="31,098 verses" FontFamily="Georgia" FontSize="26" Foreground="#F3EAD8"/>
+                    <TextBlock Text="The Toolbox Bible — on device, verified." Foreground="#A49A83" FontSize="12" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+            </VariableSizedWrapGrid>
+            <TextBlock Text="RECENT RECEIPTS" Foreground="#FF8F9D" FontSize="12" CharacterSpacing="120"/>
+            <Border Style="{StaticResource BezelCardStyle}" Padding="16">
+                <StackPanel x:Name="ReceiptList" Spacing="4"/>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

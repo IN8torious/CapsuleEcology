@@ -1,0 +1,60 @@
+<Page
+    x:Class="CapsuleEcology.Views.ModelsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:svc="using:CapsuleEcology.Services">
+    <ScrollViewer>
+        <StackPanel Margin="30,24,30,40" Spacing="14" MaxWidth="1060" HorizontalAlignment="Left">
+            <TextBlock Text="Models — Organisms, Not Products" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+            <TextBlock Text="Adopt from the original source, at your discretion. Nothing is bundled; nothing downloads silently. Downloads verify per file: SHA-256 for weights (LFS), git-blob SHA-1 for small files — exactly as the source defines them. Adoption unlocks only from the verified state."
+                       Foreground="#A49A83" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
+            <ListView x:Name="CardList" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="svc:ModelCard">
+                        <Border Style="{StaticResource BezelCardStyle}" Padding="18" Margin="0,0,0,12" Width="520">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="{x:Bind Name}" FontFamily="Georgia" FontSize="20" Foreground="#F3EAD8"/>
+                                <TextBlock Text="{x:Bind Creator}" Foreground="#A49A83" FontSize="12"/>
+                                <TextBlock Foreground="#E8E4DA" FontSize="13">
+                                    <Run Text="Kernel: "/><Run Text="{x:Bind KernelType}"/><Run Text="  ·  Gen "/><Run Text="{x:Bind Generation}"/><Run Text="  ·  Forks "/><Run Text="{x:Bind ForkCount}"/>
+                                </TextBlock>
+                                <TextBlock Foreground="#E8E4DA" FontSize="13">
+                                    <Run Text="Weights: "/><Run Text="{x:Bind WeightsText}"/><Run Text="  ·  License "/><Run Text="{x:Bind License}"/>
+                                </TextBlock>
+                                <TextBlock Foreground="#A49A83" FontSize="12" TextWrapping="Wrap">
+                                    <Run Text="Source: "/><Run Text="{x:Bind Repository}"/><Run Text=" @ "/><Run Text="{x:Bind RevisionShort}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock Text="THE ADOPTION DESK" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
+            <ComboBox x:Name="ModelSel" Width="420" SelectionChanged="ModelSel_SelectionChanged"/>
+            <TextBlock x:Name="ModelStatus" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
+            <ListView x:Name="FileList" SelectionMode="None" MaxHeight="260">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="svc:ModelFileEntry">
+                        <TextBlock FontFamily="Consolas" FontSize="11.5" Foreground="#BDB4A0">
+                            <Run Text="{x:Bind Path}"/><Run Text="  ·  "/><Run Text="{x:Bind SizeText}"/><Run Text="  ·  "/><Run Text="{x:Bind HashText}"/>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button x:Name="BtnDownload" Content="Download from source" Click="BtnDownload_Click"/>
+                <Button x:Name="BtnVerify" Content="Verify hashes" Click="BtnVerify_Click"/>
+                <Button x:Name="BtnAdopt" Content="Adopt" Click="BtnAdopt_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBox x:Name="ForkName" PlaceholderText="Fork name (e.g. Frost-Phi)" Width="240"/>
+                <Button x:Name="BtnFork" Content="Fork adopted model" Click="BtnFork_Click"/>
+                <TextBox x:Name="MutateText" PlaceholderText="Mutation (e.g. trait: memory +1)" Width="280"/>
+                <Button x:Name="BtnMutate" Content="Mutate latest fork" Click="BtnMutate_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="ModelOut" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap" MaxWidth="760"/>
+            <TextBlock Text="Local inference (OnnxRuntime) is the remaining R4 item — see FINALIZING.md in the pre-release. A model that has not verified does not run; refusal is absence."
+                       Foreground="#6F675A" FontSize="12" TextWrapping="Wrap" MaxWidth="700"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
