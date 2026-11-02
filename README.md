@@ -69,3 +69,13 @@ sources of authority; systems never are.
 Created by **N8toriousAi**. Third-party models keep their creators'
 names (Microsoft / onnx-community / Xenova) — lineage is honest or
 it is nothing.
+
+## Repo note — what rides in the release zip instead
+
+The git tree carries the full text source. Three things exceed the
+push transport and live in the **release zip asset** (and in
+`~/workspace/your_files` locally): the single-file preview HTML
+(`preview/Capsule-Ecology-Preview.html`, ~15 MB — the design target),
+the binary icons (app/Assets/*.ico/*.png, assets/icons/), and the
+sample `capsule/phi-3.5-mini-q4f16.capsule`. Nothing is missing from
+the zip; git just isn't its road.
