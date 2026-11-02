@@ -1,0 +1,89 @@
+{
+  "format": "capsule-telemetry/1",
+  "generated": "2026-11-02T20:52:41Z",
+  "project": {
+    "name": "Capsule Ecology",
+    "version": "0.1.0-pre",
+    "stack": "C# / .NET 8 + WinUI 3 (Windows App SDK 1.6), unpackaged full-trust, x64",
+    "repo": "https://github.com/IN8torious/CapsuleEcology",
+    "siblingPlaybookRepo": "https://github.com/IN8torious/CapsuleOS"
+  },
+  "build": {
+    "serviceLayerCompile": {
+      "status": "pass",
+      "errors": 0,
+      "sdk": ".NET 8.0.404",
+      "note": "All app/Services/*.cs compile in a Linux classlib check. CA1416 warnings are Windows-only APIs, expected."
+    },
+    "xamlCompile": {
+      "status": "not-run",
+      "note": "XamlCompiler.exe is a Windows binary \u2014 this step, and only this step, is the VS2022 handoff. See FINALIZING.md."
+    },
+    "installer": {
+      "status": "not-built",
+      "note": "Signed NSIS planned; signing certificate is the owner's open call."
+    }
+  },
+  "contracts": {
+    "tweakCatalog": {
+      "options": 85,
+      "applyActions": 619,
+      "revertActions": 618,
+      "parityVsPlaybook022": "exact \u2014 the one delta is the known apply-only install-capsule-toolbox step"
+    },
+    "packs": {
+      "packs": 13,
+      "apps": 105,
+      "appsWithBothWingetAndChoco": 102,
+      "leadPack": "edge-add-back"
+    },
+    "models": {
+      "models": 2,
+      "files": 29,
+      "hashRule": "LFS files verify by SHA-256; small files by git-blob SHA-1 (proven against live source data)"
+    },
+    "ledger": {
+      "format": "SI receipt chain, fnv1a \u2014 byte-compatible with si-kernel.js",
+      "groundTruth": "vectors pass; tampered chain fails verification"
+    },
+    "bible": {
+      "books": 66,
+      "chapters": 1189,
+      "verses": 31098,
+      "edition": "Toolbox Bible (WEB, God-rendering), on-device"
+    },
+    "validators": {
+      "packs": {
+        "status": "pass",
+        "detail": "packs.catalog.json VALID \u2014 capsule-packs/1"
+      },
+      "models": {
+        "status": "pass",
+        "detail": "models.catalog.json VALID \u2014 capsule-models/1"
+      },
+      "parityBattery": {
+        "status": "pass",
+        "detail": "contracts/catalog/plan.py \u2014 BATTERY: ALL PASS (defaults 44 options / 547 actions)"
+      }
+    }
+  },
+  "sourceLines": {
+    "csharpAndXaml": 2897
+  },
+  "openItems": [
+    "VS2022 build: XAML compile + link (first Windows run)",
+    "OnnxRuntime inference (R4 remainder): session + BPE tokenizer + generation loop \u2014 models download/verify/adopt are built",
+    "Bible bookmarks + highlights (R3 remainder)",
+    "Native theme pass: preview v17 tokens (warm plum-charcoal, accent #d9777f, Slate/Paper presets)",
+    "SoonPage stubs remaining: Lineage, Agents & Crews, Capsules & Worlds, All Pages",
+    "Installer signing certificate \u2014 owner's call",
+    "Final product name \u2014 owner's call (Capsule Ecology is the working candidate)",
+    "AME Wizard load test still owed on the playbook line (v0.1.0 + refresh build)"
+  ],
+  "laws": [
+    "The Capsule Order: (1) Windows is the foundation, not the enemy. (2) Observe before you modify. (3) Receipt, or it didn't happen. (4) No rollback, no ship. (5) Compatibility outranks speed.",
+    "D7 above all: humans are sources of authority; systems never are.",
+    "Three Laws: security features are never disabled; full Windows compatibility; never lock the user out of settings.",
+    "Downloads: user-initiated only, from the original source, disclosed (what / from where / how big) before the first byte."
+  ]
+}
