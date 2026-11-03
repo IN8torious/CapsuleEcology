@@ -78,7 +78,7 @@ def main():
         },
         "openItems": [
             "VS2022 build: XAML compile + link (first Windows run)",
-            "OnnxRuntime inference (R4 remainder): session + BPE tokenizer + generation loop — models download/verify/adopt are built",
+            "Windows/DirectML generation check: inference is built and CPU-proven on the pinned Phi-3.5 package (2026-11-02); one 'Ask locally' run on Windows remains",
             "Bible bookmarks + highlights (R3 remainder)",
             "Native theme pass: preview v17 tokens (warm plum-charcoal, accent #d9777f, Slate/Paper presets)",
             "SoonPage stubs remaining: Lineage, Agents & Crews, Capsules & Worlds, All Pages",

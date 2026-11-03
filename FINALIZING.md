@@ -34,15 +34,21 @@ each item names what proves it done.
 
 ## 3. Remaining build items
 
-- **Local inference (the last R4 item).** Download + verify + lineage
-  are built; the chat surface is not. To finish: add
-  Microsoft.ML.OnnxRuntime (DirectML) to the app, load
-  `onnx/model_q4f16.onnx` (external data file rides alongside), BPE
-  tokenizer from the downloaded `tokenizer.json` (32,000 tokens,
-  61,249 merges), Phi-3 chat template, KV-cache generation loop.
-  Gate it exactly as the Models page states: unverified models never
-  run. A CPU smoke test was attempted in the Linux build VM; treat
-  inference as **unproven until it generates text on Windows**.
+- **Local inference — BUILT + PROVEN on CPU (2026-11-02).**
+  InferenceService loads a verified package through OnnxRuntime
+  GenAI (Microsoft.ML.OnnxRuntimeGenAI 0.11.4): the model's own
+  genai_config.json + tokenizer.json drive tokenization and the
+  KV-cache loop; prompts are shaped with the Phi-3 chat template;
+  unverified models never run. Two package facts the service
+  handles: the web repos' config carries a "web" provider the
+  native runtime rejects (providers are cleared; DirectML is
+  requested on Windows, CPU fallback reported), and the graph
+  loads as model.onnx through a staged runtime/ view (sanitized
+  config copy + hard links) — verified bytes are never modified.
+  Proof: the pinned Phi-3.5 files (SHA-256 verified against the
+  catalog) generated coherent answers on CPU in the Linux build
+  VM. **Remaining check: generate text once on Windows/DirectML**
+  (Models page → Verify a model → "Ask locally").
 - **Bible bookmarks + highlights** (R3 remainder).
 - **Native theme pass**: adopt the preview v17 token set (warm
   plum-charcoal, accent #d9777f, Slate + Paper presets, per-user

@@ -162,7 +162,7 @@ UTILITY-FIRST-CHECKLIST.md.
   Capsule Order ratified, the P1/P2 debt is COMMITTED to this
   phase: baseline snapshot (inventory before first change) and
   a restore-point manager (list / pick / roll back).
-- [ ] **R4 — Models.** Download-from-source cards (disclosed
+- [x] **R4 — Models.** Download-from-source cards (disclosed
   source/size/license/hash, user-initiated only), hash verify,
   local inference (OnnxRuntime/DirectML), Model Cards with
   lineage; adopt/fork/mutate flows writing receipts.
@@ -171,6 +171,14 @@ UTILITY-FIRST-CHECKLIST.md.
   **git-blob SHA-1** — naive file SHA-1 would refuse valid
   downloads (caught on generation_config.json, 195 B, blob
   hash matches the catalog exactly).
+  Inference PROVEN 2026-11-02 (InferenceService + Models page
+  chat row): the pinned Phi-3.5 package, hashes verified,
+  generated real text on CPU in the Linux build VM via
+  OnnxRuntime GenAI (the web repos' genai_config needs its
+  "web" provider cleared natively, and the graph loads through
+  a staged runtime view — see InferenceService notes). The
+  Windows/DirectML generation check remains a first-run item
+  in FINALIZING.md §2/§3.
 - [ ] **R5 — Worlds.** Voxel procedural editor on the native 3D
   viewport; capsule scene format (sealed scene + mods, tradable
   — the card-collection forge from the 2026-11-01 design).

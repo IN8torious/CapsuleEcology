@@ -76,6 +76,24 @@ namespace CapsuleEcology.Views
             RefreshState();
         }
 
+        private async void BtnAsk_Click(object sender, RoutedEventArgs e)
+        {
+            if (_svc is null || Current is null) return;
+            var prompt = PromptBox.Text.Trim();
+            if (prompt.Length == 0) { AnswerText.Text = "Type a prompt first."; return; }
+            var infer = new InferenceService(_svc, _log);
+            if (!infer.CanRun(Current)) { AnswerText.Text = infer.GateReason(Current); return; }
+            BtnAsk.IsEnabled = false;
+            AnswerText.Text = "Thinking locally…";
+            try
+            {
+                var r = await infer.ChatAsync(Current, prompt, 256, System.Threading.CancellationToken.None);
+                AnswerText.Text = r.Text + $"\n— {r.Provider} · {r.NewTokens} tokens · receipt sealed";
+            }
+            catch (Exception ex) { AnswerText.Text = "Inference failed: " + ex.Message; }
+            finally { BtnAsk.IsEnabled = true; }
+        }
+
         private void BtnFork_Click(object sender, RoutedEventArgs e)
         {
             if (_svc is null || Current is null) return;

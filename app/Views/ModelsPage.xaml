@@ -52,8 +52,13 @@
                 <TextBox x:Name="MutateText" PlaceholderText="Mutation (e.g. trait: memory +1)" Width="280"/>
                 <Button x:Name="BtnMutate" Content="Mutate latest fork" Click="BtnMutate_Click"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBox x:Name="PromptBox" PlaceholderText="Ask the verified model something…" Width="420"/>
+                <Button x:Name="BtnAsk" Content="Ask locally" Click="BtnAsk_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="AnswerText" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
             <TextBlock x:Name="ModelOut" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap" MaxWidth="760"/>
-            <TextBlock Text="Local inference (OnnxRuntime) is the remaining R4 item — see FINALIZING.md in the pre-release. A model that has not verified does not run; refusal is absence."
+            <TextBlock Text="Local inference runs on OnnxRuntime GenAI — DirectML on Windows, CPU fallback, provider reported with every answer. A model that has not verified does not run; refusal is absence."
                        Foreground="#6F675A" FontSize="12" TextWrapping="Wrap" MaxWidth="700"/>
         </StackPanel>
     </ScrollViewer>
