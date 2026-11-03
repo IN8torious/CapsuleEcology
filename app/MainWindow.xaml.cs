@@ -14,6 +14,9 @@ namespace CapsuleEcology
             ContentFrame.Navigate(typeof(HomePage));
         }
 
+        private void RootGrid_Loaded(object sender, RoutedEventArgs e)
+            => ThemeService.Apply(RootGrid);
+
         private void Nav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.SelectedItem is not NavigationViewItem item) return;

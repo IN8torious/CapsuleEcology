@@ -3,14 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Capsule Ecology">
-    <Grid Background="{StaticResource NebulaBrush}">
+    <Grid x:Name="RootGrid" Background="{ThemeResource NebulaBrush}" Loaded="RootGrid_Loaded">
         <NavigationView x:Name="Nav" PaneDisplayMode="Left" IsSettingsVisible="False"
-                        PaneBackground="{StaticResource PaneAcrylic}"
+                        PaneBackground="{ThemeResource PaneAcrylic}"
                         IsBackButtonVisible="Collapsed" SelectionChanged="Nav_SelectionChanged">
             <NavigationView.PaneHeader>
                 <StackPanel Margin="12,10,0,14">
-                    <TextBlock Text="CAPSULE ECOLOGY" FontFamily="Georgia" FontSize="19" Foreground="#F3EAD8"/>
-                    <TextBlock Text="YOUR DIGITAL CIVILIZATION" FontSize="10" Foreground="#A49A83" CharacterSpacing="160"/>
+                    <TextBlock Text="CAPSULE ECOLOGY" FontFamily="Georgia" FontSize="19" Foreground="{ThemeResource CapsuleInkBrush}"/>
+                    <TextBlock Text="YOUR DIGITAL CIVILIZATION" FontSize="10" Foreground="{ThemeResource CapsuleDimBrush}" CharacterSpacing="160"/>
                 </StackPanel>
             </NavigationView.PaneHeader>
             <NavigationView.MenuItems>

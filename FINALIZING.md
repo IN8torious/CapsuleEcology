@@ -50,9 +50,17 @@ each item names what proves it done.
   VM. **Remaining check: generate text once on Windows/DirectML**
   (Models page → Verify a model → "Ask locally").
 - **Bible bookmarks + highlights** (R3 remainder).
-- **Native theme pass**: adopt the preview v17 token set (warm
-  plum-charcoal, accent #d9777f, Slate + Paper presets, per-user
-  accent) in App.xaml. The preview HTML in `preview/` is the target.
+- **Native theme pass — BUILT (2026-11-03, the v2 look).**
+  The preview v17 token set lives in App.xaml as Dark (Obsidian)
+  and Light (Paper) theme dictionaries; ThemeService adds the
+  Slate preset and the per-user accent (six swatches on Home,
+  one hex driving the accent family), persisted to
+  %LocalAppData%\CapsuleEcology\settings.json. Every page color
+  now resolves through ThemeResource — no page-level hex remains
+  outside the dictionaries. Nathan chose this route (native
+  rebuild with v2's look) for the Complete Edition; the MSI
+  toolbox is retired. **Remaining check: watch the presets and
+  accent switch live in the VS2022 run.**
 - **Lineage / Agents / Worlds pages**: replace the SoonPage stubs.
   The World's WebGL build in the preview is the design target.
 

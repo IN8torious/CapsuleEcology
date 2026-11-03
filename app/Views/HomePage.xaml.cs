@@ -13,8 +13,26 @@ namespace CapsuleEcology.Views
             Loaded += OnLoaded;
         }
 
+        private void Appearance_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is not Button b) return;
+            ThemeService.SetAppearance(b.Tag?.ToString() ?? ThemeService.Obsidian);
+            ThemeService.ApplyToWindow();
+            ThemeStatus.Text = $"Now: {ThemeService.Appearance} · accent {ThemeService.Accent} — saved as your choice.";
+        }
+
+        private void Accent_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is not Button b) return;
+            ThemeService.SetAccent(b.Tag?.ToString() ?? ThemeService.DefaultAccent);
+            ThemeService.ApplyToWindow();
+            ThemeStatus.Text = $"Now: {ThemeService.Appearance} · accent {ThemeService.Accent} — saved as your choice.";
+        }
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            ThemeService.Load();
+            ThemeStatus.Text = $"Now: {ThemeService.Appearance} · accent {ThemeService.Accent}.";
             var cards = Data.LoadCards();
             StatModels.Text = $"{cards.Count} adopted";
             var (options, apply, _, _) = Data.LoadCatalog();

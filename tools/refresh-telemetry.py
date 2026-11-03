@@ -80,7 +80,7 @@ def main():
             "VS2022 build: XAML compile + link (first Windows run)",
             "Windows/DirectML generation check: inference is built and CPU-proven on the pinned Phi-3.5 package (2026-11-02); one 'Ask locally' run on Windows remains",
             "Bible bookmarks + highlights (R3 remainder)",
-            "Native theme pass: preview v17 tokens (warm plum-charcoal, accent #d9777f, Slate/Paper presets)",
+            "Native theme pass visual check: v17 tokens are in App.xaml theme dictionaries + ThemeService (Obsidian/Slate/Paper + accent, persisted); confirm live switching in the VS2022 run",
             "SoonPage stubs remaining: Lineage, Agents & Crews, Capsules & Worlds, All Pages",
             "Installer signing certificate — owner's call",
             "Final product name — owner's call (Capsule Ecology is the working candidate)",

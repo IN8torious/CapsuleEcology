@@ -5,18 +5,59 @@
     RequestedTheme="Dark">
     <!-- Material standard (locked 2026-11-02, Nathan's call):
          frosted glass (Acrylic) + 3D bezel pops (ThemeShadow at
-         Z-translation) for cards; controls stay carved/flat. -->
+         Z-translation) for cards; controls stay carved/flat.
+         Theme pass (2026-11-03, the v2 look): every color the app
+         paints with is a ThemeResource from the dictionaries below —
+         Dark = Obsidian (warm plum-charcoal), Light = Paper (warm
+         paper). Slate + the per-user accent are applied at runtime
+         by ThemeService as root overrides; the token values are the
+         preview v17 set, Nathan's presets. Content viewports keep
+         their natural colors in every theme. -->
     <Application.Resources>
         <ResourceDictionary>
-            <AcrylicBrush x:Key="PaneAcrylic" TintColor="#141017" TintOpacity="0.72" FallbackColor="#141017"/>
-            <AcrylicBrush x:Key="CardAcrylic" TintColor="#17121A" TintOpacity="0.78" FallbackColor="#17121A"/>
-            <RadialGradientBrush x:Key="NebulaBrush" Center="0.12,-0.05" RadiusX="0.85" RadiusY="0.85" MappingMode="RelativeToBoundingBox">
-                <GradientStop Color="#2C3A4C" Offset="0"/>
-                <GradientStop Color="#0E0D0F" Offset="0.65"/>
-            </RadialGradientBrush>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="CapsuleBgBrush" Color="#171219"/>
+                    <SolidColorBrush x:Key="CapsulePanelBrush" Color="#1F1821"/>
+                    <SolidColorBrush x:Key="CapsulePanel2Brush" Color="#2A1E2C"/>
+                    <SolidColorBrush x:Key="CapsuleInkBrush" Color="#F0E8E0"/>
+                    <SolidColorBrush x:Key="CapsuleDimBrush" Color="#B8A48F"/>
+                    <SolidColorBrush x:Key="CapsuleFaintBrush" Color="#7D6F61"/>
+                    <SolidColorBrush x:Key="CapsuleLineBrush" Color="#774146"/>
+                    <SolidColorBrush x:Key="CapsuleAccentBrush" Color="#D9777F"/>
+                    <SolidColorBrush x:Key="CapsuleAccentDarkBrush" Color="#A3595F"/>
+                    <SolidColorBrush x:Key="CapsuleRoseBrush" Color="#E9B0B5"/>
+                    <SolidColorBrush x:Key="CapsuleGoldBrush" Color="#DFAE52"/>
+                    <AcrylicBrush x:Key="PaneAcrylic" TintColor="#141017" TintOpacity="0.72" FallbackColor="#141017"/>
+                    <AcrylicBrush x:Key="CardAcrylic" TintColor="#17121A" TintOpacity="0.78" FallbackColor="#17121A"/>
+                    <RadialGradientBrush x:Key="NebulaBrush" Center="0.12,-0.05" RadiusX="0.85" RadiusY="0.85" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#2C3A4C" Offset="0"/>
+                        <GradientStop Color="#0E0D0F" Offset="0.65"/>
+                    </RadialGradientBrush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="CapsuleBgBrush" Color="#ECE7DA"/>
+                    <SolidColorBrush x:Key="CapsulePanelBrush" Color="#F8F4EA"/>
+                    <SolidColorBrush x:Key="CapsulePanel2Brush" Color="#F0E9D8"/>
+                    <SolidColorBrush x:Key="CapsuleInkBrush" Color="#2A2113"/>
+                    <SolidColorBrush x:Key="CapsuleDimBrush" Color="#5F5340"/>
+                    <SolidColorBrush x:Key="CapsuleFaintBrush" Color="#978A6D"/>
+                    <SolidColorBrush x:Key="CapsuleLineBrush" Color="#C9A0A2"/>
+                    <SolidColorBrush x:Key="CapsuleAccentBrush" Color="#C65B66"/>
+                    <SolidColorBrush x:Key="CapsuleAccentDarkBrush" Color="#9A4750"/>
+                    <SolidColorBrush x:Key="CapsuleRoseBrush" Color="#A85A61"/>
+                    <SolidColorBrush x:Key="CapsuleGoldBrush" Color="#96690F"/>
+                    <AcrylicBrush x:Key="PaneAcrylic" TintColor="#F3EEE0" TintOpacity="0.72" FallbackColor="#F3EEE0"/>
+                    <AcrylicBrush x:Key="CardAcrylic" TintColor="#F8F4EA" TintOpacity="0.78" FallbackColor="#F8F4EA"/>
+                    <RadialGradientBrush x:Key="NebulaBrush" Center="0.12,-0.05" RadiusX="0.85" RadiusY="0.85" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#FBF7EC" Offset="0"/>
+                        <GradientStop Color="#ECE7DA" Offset="0.65"/>
+                    </RadialGradientBrush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
             <Style x:Key="BezelCardStyle" TargetType="Border">
-                <Setter Property="Background" Value="{StaticResource CardAcrylic}"/>
-                <Setter Property="BorderBrush" Value="#7A1020"/>
+                <Setter Property="Background" Value="{ThemeResource CardAcrylic}"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource CapsuleLineBrush}"/>
                 <Setter Property="BorderThickness" Value="1"/>
                 <Setter Property="CornerRadius" Value="12"/>
                 <Setter Property="Translation" Value="0,0,28"/>

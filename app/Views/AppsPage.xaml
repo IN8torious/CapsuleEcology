@@ -5,17 +5,17 @@
     xmlns:svc="using:CapsuleEcology.Services">
     <Grid Margin="30,24,30,20">
         <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-        <TextBlock Text="Apps — Environment Capsules" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
-        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="#A49A83" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
+        <TextBlock Text="Apps — Environment Capsules" FontFamily="Georgia" FontSize="30" Foreground="{ThemeResource CapsuleInkBrush}"/>
+        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions><ColumnDefinition Width="300"/><ColumnDefinition Width="12"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
             <ListView x:Name="PackList" SelectionMode="Single" SelectionChanged="PackList_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="svc:Pack">
                         <StackPanel Padding="2">
-                            <TextBlock Text="{x:Bind Name}" Foreground="#E8E4DA" FontSize="14"/>
-                            <TextBlock Text="{x:Bind AppsText}" FontSize="11.5" Foreground="#A49A83"/>
-                            <TextBlock Text="{x:Bind Role}" FontSize="11.5" Foreground="#6F675A" TextWrapping="Wrap"/>
+                            <TextBlock Text="{x:Bind Name}" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="14"/>
+                            <TextBlock Text="{x:Bind AppsText}" FontSize="11.5" Foreground="{ThemeResource CapsuleDimBrush}"/>
+                            <TextBlock Text="{x:Bind Role}" FontSize="11.5" Foreground="{ThemeResource CapsuleFaintBrush}" TextWrapping="Wrap"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -26,24 +26,24 @@
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="svc:PackApp">
                             <StackPanel Padding="2">
-                                <TextBlock Foreground="#E8E4DA" FontSize="13.5">
+                                <TextBlock Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5">
                                     <Run Text="{x:Bind Name}"/><Run Text="  ·  "/><Run Text="{x:Bind OptionalText}"/>
                                 </TextBlock>
-                                <TextBlock Text="{x:Bind SourceText}" FontFamily="Consolas" FontSize="11" Foreground="#6F675A"/>
-                                <TextBlock Text="{x:Bind Note}" FontSize="11.5" Foreground="#A49A83" TextWrapping="Wrap"/>
+                                <TextBlock Text="{x:Bind SourceText}" FontFamily="Consolas" FontSize="11" Foreground="{ThemeResource CapsuleFaintBrush}"/>
+                                <TextBlock Text="{x:Bind Note}" FontSize="11.5" Foreground="{ThemeResource CapsuleDimBrush}" TextWrapping="Wrap"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Border Grid.Row="2" Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="12">
-                    <ScrollViewer><TextBlock x:Name="PlanOut" FontFamily="Consolas" FontSize="11.5" Foreground="#BDB4A0" TextWrapping="Wrap" Text="Select a pack to see its full manifest — every app and exactly where it comes from — before anything is installed."/></ScrollViewer>
+                <Border Grid.Row="2" Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="12">
+                    <ScrollViewer><TextBlock x:Name="PlanOut" FontFamily="Consolas" FontSize="11.5" Foreground="{ThemeResource CapsuleDimBrush}" TextWrapping="Wrap" Text="Select a pack to see its full manifest — every app and exactly where it comes from — before anything is installed."/></ScrollViewer>
                 </Border>
             </Grid>
         </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="10" Margin="0,12,0,0">
             <Button x:Name="BtnInstall" Content="Install selected apps" Click="BtnInstall_Click"/>
             <Button x:Name="BtnUninstall" Content="Uninstall selected apps" Click="BtnUninstall_Click"/>
-            <TextBlock x:Name="Status" VerticalAlignment="Center" FontSize="13" Foreground="#A49A83" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Status" VerticalAlignment="Center" FontSize="13" Foreground="{ThemeResource CapsuleDimBrush}" TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </Page>

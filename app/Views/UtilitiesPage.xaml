@@ -5,42 +5,42 @@
     xmlns:svc="using:CapsuleEcology.Services">
     <Grid Margin="30,24,30,20">
         <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-        <TextBlock Text="Utilities — The Everyday Bench" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
-        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="#A49A83" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
+        <TextBlock Text="Utilities — The Everyday Bench" FontFamily="Georgia" FontSize="30" Foreground="{ThemeResource CapsuleInkBrush}"/>
+        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
         <ScrollViewer Grid.Row="2">
             <StackPanel Spacing="14">
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="DNS CHANGER" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
-                        <TextBlock x:Name="DnsCurrent" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap"/>
+                        <TextBlock Text="DNS CHANGER" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
+                        <TextBlock x:Name="DnsCurrent" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5" TextWrapping="Wrap"/>
                         <ListView x:Name="DnsList" SelectionMode="Single" MaxHeight="220">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="svc:DnsProvider">
                                     <StackPanel Padding="2">
-                                        <TextBlock Text="{x:Bind Line}" Foreground="#E8E4DA" FontSize="13.5"/>
-                                        <TextBlock Text="{x:Bind Note}" Foreground="#6F675A" FontSize="11.5" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{x:Bind Line}" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5"/>
+                                        <TextBlock Text="{x:Bind Note}" Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="11.5" TextWrapping="Wrap"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnDnsApply" Content="Apply selected DNS" Click="BtnDnsApply_Click"/>
-                            <TextBlock x:Name="DnsStatus" VerticalAlignment="Center" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="DnsStatus" VerticalAlignment="Center" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                         </StackPanel>
-                        <TextBlock Text="Applying asks Windows for elevation (UAC) and is verified by re-reading your adapters. Automatic (DHCP) is the one-tap revert." Foreground="#6F675A" FontSize="12" TextWrapping="Wrap"/>
+                        <TextBlock Text="Applying asks Windows for elevation (UAC) and is verified by re-reading your adapters. Automatic (DHCP) is the one-tap revert." Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="12" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="CLEANER — FILES ONLY, SIZES FIRST" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
+                        <TextBlock Text="CLEANER — FILES ONLY, SIZES FIRST" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
                         <ListView x:Name="CleanList" SelectionMode="Multiple" MaxHeight="240">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="svc:CleanCategory">
                                     <StackPanel Padding="2">
-                                        <TextBlock Foreground="#E8E4DA" FontSize="13.5">
+                                        <TextBlock Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5">
                                             <Run Text="{x:Bind Name}"/><Run Text="  —  "/><Run Text="{x:Bind SizeText}"/>
                                         </TextBlock>
-                                        <TextBlock Text="{x:Bind Note}" Foreground="#6F675A" FontSize="11.5" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{x:Bind Note}" Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="11.5" TextWrapping="Wrap"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -48,14 +48,14 @@
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnMeasure" Content="Measure again" Click="BtnMeasure_Click"/>
                             <Button x:Name="BtnClean" Content="Clean selected" Click="BtnClean_Click"/>
-                            <TextBlock x:Name="CleanStatus" VerticalAlignment="Center" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="CleanStatus" VerticalAlignment="Center" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                         </StackPanel>
-                        <TextBlock Text="Never settings, never services, never logs. Locked files are skipped and counted. The Recycle Bin is the one irreversible category — it is never pre-selected." Foreground="#6F675A" FontSize="12" TextWrapping="Wrap"/>
+                        <TextBlock Text="Never settings, never services, never logs. Locked files are skipped and counted. The Recycle Bin is the one irreversible category — it is never pre-selected." Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="12" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="QUICK TOOLS" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
+                        <TextBlock Text="QUICK TOOLS" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button Content="Disk Cleanup" Click="ToolCleanmgr_Click"/>
                             <Button Content="System Information" Click="ToolMsinfo_Click"/>
@@ -63,7 +63,7 @@
                             <Button Content="Power: Balanced" Click="ToolPowerBalanced_Click"/>
                             <Button Content="Power: High performance" Click="ToolPowerHigh_Click"/>
                         </StackPanel>
-                        <TextBlock x:Name="ToolStatus" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="ToolStatus" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
             </StackPanel>

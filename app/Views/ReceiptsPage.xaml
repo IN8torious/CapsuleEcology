@@ -5,14 +5,14 @@
     xmlns:contracts="using:Capsule.Contracts">
     <ScrollViewer>
         <StackPanel Margin="30,24,30,40" Spacing="14" MaxWidth="1060" HorizontalAlignment="Left">
-            <TextBlock Text="Receipts — Inspect It" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+            <TextBlock Text="Receipts — Inspect It" FontFamily="Georgia" FontSize="30" Foreground="{ThemeResource CapsuleInkBrush}"/>
             <TextBlock Text="Not “trust Nate.” This chain is sealed by the C# port of the SI ledger — byte-compatible with the web kernel, RingFlow, and Nimbusis. The hashes below are the ground truth."
-                       Foreground="#A49A83" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
+                       Foreground="{ThemeResource CapsuleDimBrush}" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
             <ListView x:Name="EntryList" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="contracts:LedgerEntry">
-                        <TextBlock FontSize="13" Foreground="#E8E4DA">
-                            <Run Text="#"/><Run Text="{x:Bind Seq}"/><Run Text="  "/><Run Text="{x:Bind Agent}"/><Run Text="  ·  "/><Run Text="{x:Bind Kind}"/><Run Text="  ·  "/><Run Text="{x:Bind Event}"/><Run Text="   →  "/><Run Text="{x:Bind Hash}" Foreground="#D9A441"/>
+                        <TextBlock FontSize="13" Foreground="{ThemeResource CapsuleInkBrush}">
+                            <Run Text="#"/><Run Text="{x:Bind Seq}"/><Run Text="  "/><Run Text="{x:Bind Agent}"/><Run Text="  ·  "/><Run Text="{x:Bind Kind}"/><Run Text="  ·  "/><Run Text="{x:Bind Event}"/><Run Text="   →  "/><Run Text="{x:Bind Hash}" Foreground="{ThemeResource CapsuleGoldBrush}"/>
                         </TextBlock>
                     </DataTemplate>
                 </ListView.ItemTemplate>

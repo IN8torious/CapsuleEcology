@@ -5,57 +5,57 @@
     xmlns:svc="using:CapsuleEcology.Services">
     <Grid Margin="30,24,30,20">
         <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
-        <TextBlock Text="Repair — Recovery First" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
-        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="#A49A83" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
+        <TextBlock Text="Repair — Recovery First" FontFamily="Georgia" FontSize="30" Foreground="{ThemeResource CapsuleInkBrush}"/>
+        <TextBlock Grid.Row="1" x:Name="Summary" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13.5" TextWrapping="Wrap" MaxWidth="860" Margin="0,4,0,10"/>
         <ScrollViewer Grid.Row="2">
             <StackPanel Spacing="14">
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="THE REPAIR TOOLKIT" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
-                        <TextBlock x:Name="ToolkitStatus" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap"/>
+                        <TextBlock Text="THE REPAIR TOOLKIT" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
+                        <TextBlock x:Name="ToolkitStatus" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5" TextWrapping="Wrap"/>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnInstallToolkit" Content="Install toolkit" Click="BtnInstallToolkit_Click"/>
                             <Button x:Name="BtnUninstallToolkit" Content="Uninstall toolkit" Click="BtnUninstallToolkit_Click"/>
                         </StackPanel>
-                        <TextBlock Text="Installs the DISM/SFC repair scripts to %ProgramData%\CapsuleOS\Repair with 'Repair Windows' shortcuts on the desktop and Start menu. Uninstall removes all of it. The toolkit's launcher self-elevates." Foreground="#6F675A" FontSize="12" TextWrapping="Wrap"/>
+                        <TextBlock Text="Installs the DISM/SFC repair scripts to %ProgramData%\CapsuleOS\Repair with 'Repair Windows' shortcuts on the desktop and Start menu. Uninstall removes all of it. The toolkit's launcher self-elevates." Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="12" TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="REPAIR THIS WINDOWS — DISM, THEN SFC" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
-                        <TextBlock Text="Microsoft's own order: DISM CheckHealth → ScanHealth → RestoreHealth, then SFC, then a confirming SFC. Needs this app running as administrator; every step seals a receipt and the full output lands in a dated log." Foreground="#A49A83" FontSize="12.5" TextWrapping="Wrap"/>
+                        <TextBlock Text="REPAIR THIS WINDOWS — DISM, THEN SFC" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
+                        <TextBlock Text="Microsoft's own order: DISM CheckHealth → ScanHealth → RestoreHealth, then SFC, then a confirming SFC. Needs this app running as administrator; every step seals a receipt and the full output lands in a dated log." Foreground="{ThemeResource CapsuleDimBrush}" FontSize="12.5" TextWrapping="Wrap"/>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnFullRepair" Content="Run full repair" Click="BtnFullRepair_Click"/>
                             <Button x:Name="BtnQuickSfc" Content="Quick SFC scan" Click="BtnQuickSfc_Click"/>
-                            <TextBlock x:Name="RepairStatus" VerticalAlignment="Center" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="RepairStatus" VerticalAlignment="Center" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="RESTORE POINTS" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
+                        <TextBlock Text="RESTORE POINTS" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
                         <ListView x:Name="PointList" MaxHeight="180">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="svc:RestorePointInfo">
-                                    <TextBlock Text="{x:Bind Line}" Foreground="#E8E4DA" FontSize="13"/>
+                                    <TextBlock Text="{x:Bind Line}" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13"/>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnRefreshPoints" Content="Refresh list" Click="BtnRefreshPoints_Click"/>
                             <Button x:Name="BtnCreatePoint" Content="Create restore point" Click="BtnCreatePoint_Click"/>
-                            <TextBlock x:Name="PointStatus" VerticalAlignment="Center" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="PointStatus" VerticalAlignment="Center" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
-                <Border Background="#101014" BorderBrush="#2A0D13" BorderThickness="1" CornerRadius="8" Padding="14">
+                <Border Background="{ThemeResource CapsuleBgBrush}" BorderBrush="{ThemeResource CapsuleLineBrush}" BorderThickness="1" CornerRadius="8" Padding="14">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="BASELINE SNAPSHOTS — OBSERVE BEFORE YOU MODIFY" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
-                        <TextBlock Text="A baseline is a sealed reading of this machine — OS build, hardware, disk, DNS, restore points, catalog fingerprints, and the receipt chain's own state — saved as JSON so any later state can be diffed against truth." Foreground="#A49A83" FontSize="12.5" TextWrapping="Wrap"/>
+                        <TextBlock Text="BASELINE SNAPSHOTS — OBSERVE BEFORE YOU MODIFY" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
+                        <TextBlock Text="A baseline is a sealed reading of this machine — OS build, hardware, disk, DNS, restore points, catalog fingerprints, and the receipt chain's own state — saved as JSON so any later state can be diffed against truth." Foreground="{ThemeResource CapsuleDimBrush}" FontSize="12.5" TextWrapping="Wrap"/>
                         <ListView x:Name="BaselineList" MaxHeight="120"/>
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button x:Name="BtnBaseline" Content="Capture baseline" Click="BtnBaseline_Click"/>
-                            <TextBlock x:Name="BaselineStatus" VerticalAlignment="Center" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="BaselineStatus" VerticalAlignment="Center" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>

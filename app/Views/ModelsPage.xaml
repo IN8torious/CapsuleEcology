@@ -5,23 +5,23 @@
     xmlns:svc="using:CapsuleEcology.Services">
     <ScrollViewer>
         <StackPanel Margin="30,24,30,40" Spacing="14" MaxWidth="1060" HorizontalAlignment="Left">
-            <TextBlock Text="Models — Organisms, Not Products" FontFamily="Georgia" FontSize="30" Foreground="#F3EAD8"/>
+            <TextBlock Text="Models — Organisms, Not Products" FontFamily="Georgia" FontSize="30" Foreground="{ThemeResource CapsuleInkBrush}"/>
             <TextBlock Text="Adopt from the original source, at your discretion. Nothing is bundled; nothing downloads silently. Downloads verify per file: SHA-256 for weights (LFS), git-blob SHA-1 for small files — exactly as the source defines them. Adoption unlocks only from the verified state."
-                       Foreground="#A49A83" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
+                       Foreground="{ThemeResource CapsuleDimBrush}" FontSize="14" TextWrapping="Wrap" MaxWidth="760"/>
             <ListView x:Name="CardList" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="svc:ModelCard">
                         <Border Style="{StaticResource BezelCardStyle}" Padding="18" Margin="0,0,0,12" Width="520">
                             <StackPanel Spacing="4">
-                                <TextBlock Text="{x:Bind Name}" FontFamily="Georgia" FontSize="20" Foreground="#F3EAD8"/>
-                                <TextBlock Text="{x:Bind Creator}" Foreground="#A49A83" FontSize="12"/>
-                                <TextBlock Foreground="#E8E4DA" FontSize="13">
+                                <TextBlock Text="{x:Bind Name}" FontFamily="Georgia" FontSize="20" Foreground="{ThemeResource CapsuleInkBrush}"/>
+                                <TextBlock Text="{x:Bind Creator}" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="12"/>
+                                <TextBlock Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13">
                                     <Run Text="Kernel: "/><Run Text="{x:Bind KernelType}"/><Run Text="  ·  Gen "/><Run Text="{x:Bind Generation}"/><Run Text="  ·  Forks "/><Run Text="{x:Bind ForkCount}"/>
                                 </TextBlock>
-                                <TextBlock Foreground="#E8E4DA" FontSize="13">
+                                <TextBlock Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13">
                                     <Run Text="Weights: "/><Run Text="{x:Bind WeightsText}"/><Run Text="  ·  License "/><Run Text="{x:Bind License}"/>
                                 </TextBlock>
-                                <TextBlock Foreground="#A49A83" FontSize="12" TextWrapping="Wrap">
+                                <TextBlock Foreground="{ThemeResource CapsuleDimBrush}" FontSize="12" TextWrapping="Wrap">
                                     <Run Text="Source: "/><Run Text="{x:Bind Repository}"/><Run Text=" @ "/><Run Text="{x:Bind RevisionShort}"/>
                                 </TextBlock>
                             </StackPanel>
@@ -29,13 +29,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TextBlock Text="THE ADOPTION DESK" FontSize="12" Foreground="#E9A3AB" CharacterSpacing="80"/>
+            <TextBlock Text="THE ADOPTION DESK" FontSize="12" Foreground="{ThemeResource CapsuleRoseBrush}" CharacterSpacing="80"/>
             <ComboBox x:Name="ModelSel" Width="420" SelectionChanged="ModelSel_SelectionChanged"/>
-            <TextBlock x:Name="ModelStatus" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
+            <TextBlock x:Name="ModelStatus" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
             <ListView x:Name="FileList" SelectionMode="None" MaxHeight="260">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="svc:ModelFileEntry">
-                        <TextBlock FontFamily="Consolas" FontSize="11.5" Foreground="#BDB4A0">
+                        <TextBlock FontFamily="Consolas" FontSize="11.5" Foreground="{ThemeResource CapsuleDimBrush}">
                             <Run Text="{x:Bind Path}"/><Run Text="  ·  "/><Run Text="{x:Bind SizeText}"/><Run Text="  ·  "/><Run Text="{x:Bind HashText}"/>
                         </TextBlock>
                     </DataTemplate>
@@ -56,10 +56,10 @@
                 <TextBox x:Name="PromptBox" PlaceholderText="Ask the verified model something…" Width="420"/>
                 <Button x:Name="BtnAsk" Content="Ask locally" Click="BtnAsk_Click"/>
             </StackPanel>
-            <TextBlock x:Name="AnswerText" Foreground="#E8E4DA" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
-            <TextBlock x:Name="ModelOut" Foreground="#A49A83" FontSize="13" TextWrapping="Wrap" MaxWidth="760"/>
+            <TextBlock x:Name="AnswerText" Foreground="{ThemeResource CapsuleInkBrush}" FontSize="13.5" TextWrapping="Wrap" MaxWidth="760"/>
+            <TextBlock x:Name="ModelOut" Foreground="{ThemeResource CapsuleDimBrush}" FontSize="13" TextWrapping="Wrap" MaxWidth="760"/>
             <TextBlock Text="Local inference runs on OnnxRuntime GenAI — DirectML on Windows, CPU fallback, provider reported with every answer. A model that has not verified does not run; refusal is absence."
-                       Foreground="#6F675A" FontSize="12" TextWrapping="Wrap" MaxWidth="700"/>
+                       Foreground="{ThemeResource CapsuleFaintBrush}" FontSize="12" TextWrapping="Wrap" MaxWidth="700"/>
         </StackPanel>
     </ScrollViewer>
 </Page>

@@ -9,9 +9,13 @@ namespace CapsuleEcology
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             _window = new MainWindow();
+            WindowRef = _window;
             _window.Activate();
         }
 
         private Window? _window;
+
+        /// <summary>The main window, for ThemeService.ApplyToWindow.</summary>
+        public static Window? WindowRef { get; private set; }
     }
 }
